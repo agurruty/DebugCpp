@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Compile to Assembly",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-S",                // Flag to compile into assembly
+          "-O2",               // Optimization flag
+          "-o",                // Output flag
+          "${fileDirname}/${fileBasenameNoExtension}.s",  // Output filename
+          "${file}"            // Input file
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Task to compile C++ code to assembly"
+      }
+    ]
+  }
+  
